@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+	{{ partial "banner" site.Data.banner }}
+	{{ partial "spotlight" site.Data.spotlightCustomDesigns }}
+	{{ partial "spotlight" site.Data.spotlightVictorian }}
+	{{ partial "spotlight" site.Data.spotlightPrairie }}
+	{{ partial "spotlight" site.Data.spotlightRoses }}
+	{{ partial "spotlight" site.Data.spotlightBar }}
+	{{ partial "spotlight" site.Data.spotlightRepairs }}
+	{{ partial "spotlight" site.Data.spotlightRichard }}
+	{{ partial "contact" . }}
+{{ end }}

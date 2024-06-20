@@ -1,0 +1,6 @@
+####################### Spotlight #########################
+style: "style1 orient-right onscroll-image-fade-in"
+id: repairs
+title : Repairs and Custom Fittings
+content: Our windows are designed to fit the space, with an eye towards <b>precision</b><br><br>Repairs, inserts, new construction, flush mounts, we have the know-how
+image: "images/repairs.jpg"

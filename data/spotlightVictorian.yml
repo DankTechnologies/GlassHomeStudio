@@ -1,0 +1,6 @@
+####################### Spotlight #########################
+style: "style1 orient-right onscroll-image-fade-in"
+id: victorian
+title : Victorian
+content: If you live in an older building with wood trim and texture, Victorian may be the best choice<br><br>Go minimal with <b>clean lines and simple patterns</b>, or deck it out with <b>rich bevels and intricate designs</b>
+image: "images/victorian.jpg"

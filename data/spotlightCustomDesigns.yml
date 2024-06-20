@@ -1,0 +1,6 @@
+####################### Spotlight #########################
+style: "style1 orient-left onscroll-image-fade-in"
+id: customDesigns
+title : Custom Designs
+content: We work with <b>local artists</b> to capture the essence of what we're creating<br><br>The devil is in the details, and we sweat them
+image: "images/cat.jpg"

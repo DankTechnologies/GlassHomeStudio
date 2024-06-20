@@ -1,0 +1,110 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<section class="wrapper style1">
+    <div class="inner">
+        <header>
+            <h2>Contact</h2>
+        </header>
+        <div class="content" style="margin-bottom: 100px">
+            <form id="contact-form">
+                <div class="fields">
+                    <div class="field half">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required />
+                    </div>
+                    <div class="field half">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" required rows="6"></textarea>
+                    </div>
+                </div>
+                <!-- hidden reCaptcha token input -->
+                <input type="hidden" id="token" name="gCaptchaResponse">
+                <div class="g-recaptcha" data-sitekey="6LfJ4c8hAAAAAOMQLlYjJMEVOWov-USloS29Fqnu" data-callback="correctCaptcha"></div>
+                <br>
+                <ul class="actions">
+                    <li><input type="submit" name="submit" id="submit-button" value="Send Message" disabled /></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("submit-button");
+
+    function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name && email && message) {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    form.addEventListener("input", validateForm);
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const data = new FormData(event.target);
+        const plainFormData = Object.fromEntries(data.entries());
+        const formDataJsonString = JSON.stringify(plainFormData);
+
+        if (!plainFormData.gCaptchaResponse)
+            return;
+
+        submitButton.innerText = "Please Wait...";
+        submitButton.disabled = true;
+
+        fetch("https://script.google.com/macros/s/AKfycbxPn8akmQh29rlgO7nkzPZgomRK1dJPybwEktSXDYLnyTjMVoDvQ-geqpALzI4QTiVRPA/exec", {
+            method: "POST",
+            body: formDataJsonString,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                response.json().then(data => {
+                    if (data.status != "OK") {
+                        showError('Something went wrong, sorry. Please email us at info@glasshomestudio.com');
+                    } else {
+                        showSuccess('Thanks! We will be in touch soon');
+                    }
+                });
+            } else {
+                showError('Something went wrong, sorry. Please email us at info@glasshomestudio.com');
+            }
+        }).catch(error => {
+            showError('Something went wrong, sorry. Please email us at info@glasshomestudio.com');
+        });
+    }
+
+    function showSuccess(message) {
+        setFormMinHeight();
+        form.innerHTML = `<p>${message}</p>`;
+    }
+
+    function showError(message) {
+        setFormMinHeight();
+        form.innerHTML = `<p>${message}</p>`;
+    }
+
+    function setFormMinHeight() {
+        const formHeight = form.offsetHeight;
+        form.style.minHeight = `${formHeight}px`;
+    }
+
+    form.addEventListener("submit", handleSubmit);
+</script>
+<script>
+    var correctCaptcha = function(response) {
+        document.getElementById("token").value = response;
+        validateForm(); // Revalidate form when captcha is solved
+    };
+</script>

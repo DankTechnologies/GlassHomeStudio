@@ -1,0 +1,6 @@
+####################### Spotlight #########################
+style: "style1 orient-left onscroll-image-fade-in"
+id: bar
+title: Basement Bars
+content: We are man cave specialists, we support your <b>hobby</b><br><br><b>Opaque glass</b> is the best choice here. LED backlighting makes them pop
+image: "images/bar.jpg"

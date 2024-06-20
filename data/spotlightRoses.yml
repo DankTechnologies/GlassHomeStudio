@@ -1,0 +1,6 @@
+####################### Spotlight #########################
+style: "style1 orient-right onscroll-image-fade-in"
+id: roses
+title : Timeless Choices
+content: Floral themes are perennial favorites.  <b>Birds are also cool</b><br><br>All we need is a picture to get started
+image: "images/roses.jpg"

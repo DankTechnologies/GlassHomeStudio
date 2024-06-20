@@ -1,0 +1,10 @@
+####################### Banner #########################
+style: "style1 fullscreen orient-right content-align-right onload-image-fade-in onload-content-fade-right"
+title : Glass Home Studio
+subtitle: Custom-made stained glass art at affordable prices
+content : In <b>Oak Park, Illinois</b>, making stained glass art<br>for Chicagoland since the 80s
+button:
+  label : "Quick Tour"
+  link : "#customDesigns"
+image : "images/banner4.jpg"
+

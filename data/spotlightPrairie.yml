@@ -1,0 +1,8 @@
+####################### Spotlight #########################
+style: "style1 orient-left onscroll-image-fade-in"
+id: prairie
+title : Prairie Art
+content: |
+  Prairie School style dates back to the early 1900s, with <b>Frank Lloyd Wright</b> as a proponent, right here in Oak Park<br><br>
+  Stained glass windows of this style were prevalent in Bungalow-style houses across the Midwest
+image: "images/prairie.jpg"
