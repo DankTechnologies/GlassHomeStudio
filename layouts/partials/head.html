@@ -7,7 +7,7 @@
 	{{ if .Site.Params.favicon }}
 	{{ partial "favicon" }}
 	{{ end }}
-	
+
 	<!-- CSS -->
 	{{ if .Site.IsServer }}
 	{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
@@ -28,5 +28,8 @@
 	{{ range .Site.Params.asset.fontawesome_css -}}
 		<link rel="stylesheet" href="{{ . | absURL }}">
 	{{- end }}
+
+	<!-- Plausible -->
+	<script defer data-domain="glasshomestudio.com" src="https://plausible.pitpat.me/js/script.js"></script>
 
 </head>
