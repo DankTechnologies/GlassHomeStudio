@@ -2,7 +2,7 @@
 ## Basic Configuration
 ## -----------------------------------------------
 
-title = "Glass Home Studio"
+title = "Glass Home Studio | Custom Stained Glass | Oak Park + Chicago"
 theme = "hugo-story"
 copyright = "{year}"
 
@@ -32,6 +32,6 @@ disableKinds = ["taxonomy", "section"]
 ## -----------------------------------------------
 
 [Params]
-  description = "Custom-made stained glass art at affordable prices"
+  description = "Custom-made stained glass art at affordable prices in Oak Park and Chicago area.  Repairs, custom fittings, new construction, man caves, custom designs"
   logo = "images/banner.jpg"
   favicon = true
